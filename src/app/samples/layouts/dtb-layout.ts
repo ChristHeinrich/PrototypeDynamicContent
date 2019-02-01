@@ -1,4 +1,4 @@
-import { Layout } from './layout';
+import { Layout } from '../../types/layout';
 
 export const LAYOUT: Layout[] = [
   {

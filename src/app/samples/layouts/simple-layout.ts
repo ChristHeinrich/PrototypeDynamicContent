@@ -1,5 +1,5 @@
-import { Layout } from './layout';
-import {FieldConfig} from './field.interface';
+import { Layout } from '../../types/layout';
+import {FieldConfig} from '../../types/field.interface';
 import {Validators} from '@angular/forms';
 
 // export const SIMPLELAYOUT: Layout[] = [

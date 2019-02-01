@@ -13,6 +13,8 @@ import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
 import { DynamicFieldDirective } from "./components/dynamic-field/dynamic-field.directive";
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
+import { MessagesComponent } from "./components/messages/messages.component";
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.com
     RadiobuttonComponent,
     CheckboxComponent,
     DynamicFieldDirective,
-    DynamicFormComponent
+    DynamicFormComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
