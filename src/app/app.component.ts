@@ -21,12 +21,12 @@ export class AppComponent {
 
   getLayout(): void {
     this.layoutService.getLayout()
-      .subscribe(layout => this.regConfig = layout)
+      .subscribe(async layout => this.regConfig = layout);
   }
 
-  getData(): void {
+  getData(): void{
     this.dataService.getData()
-      .subscribe(data => this.data = data)
+      .subscribe(async data => this.data = data);
   }
 
   ngOnInit() {
