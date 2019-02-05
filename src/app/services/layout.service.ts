@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Layout } from '../types/layout';
+import { interval } from 'rxjs';
 import { SIMPLELAYOUT } from '../samples/layouts/simple-layout';
 import { FieldConfig } from "../types/field.interface";
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import {catchError, delay, map, takeWhile, tap} from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -22,21 +23,17 @@ export class LayoutService {
 
   setCachedLayout(layout: FieldConfig[]): void {
     this.cachedLayout = layout;
-
   }
 
   fetchLayout(): Observable<FieldConfig[]> {
     this.messageService.add('LayoutService: fetchted layout from ' + this.layoutUrl);
-    //return of(SIMPLELAYOUT);
-
-
     return this.http.get<any[]>(this.layoutUrl)
       .pipe(
-        tap(_ => this.log('fetched layout')),
-        catchError(this.handleError('getHeroes', []))
+        delay(100),
+        tap(_ => this.log('fetched layout'))
+        // catchError(this.handleError('getLayout', []))
       );
-
-
+    // return this.http.get<any[]>(this.layoutUrl).pipe(delay(500))
   }
   private log(message: string) {
     this.messageService.add(`LayoutService: ${message}`);

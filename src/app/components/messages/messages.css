@@ -1,23 +1,26 @@
 .title {
-  background-color: yellow;
-  color: red;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  font-family: Roboto;
   font-weight: lighter;
 }
 body {
   margin: 2em;
+  font-family: Roboto;
+  background-color: black;
+  font-family: Roboto;
 }
 body, input[text], button {
   color: crimson;
-  font-family: Cambria, Georgia;
+
 }
 
 button.clear {
-  font-family: Arial;
+  font-family: Roboto;
   background-color: #eee;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 1px 10px;
+  border-radius: 1px;
   cursor: pointer;
   cursor: hand;
 }
@@ -30,6 +33,13 @@ button:disabled {
   cursor: auto;
 }
 button.clear {
-  color: #888;
+  color: silver;
+  heigth: 10 px;
   margin-bottom: 12px;
+}
+.message {
+  font-family: Roboto;
+  font-size: 12px;
+  background-color: black;
+  color: red;
 }

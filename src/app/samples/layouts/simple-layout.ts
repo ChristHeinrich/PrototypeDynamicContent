@@ -83,13 +83,13 @@ export const SIMPLELAYOUT: FieldConfig[] = [
   },
   {
     type: "checkbox",
-    label: "Accept Terms",
+    label: "Accept",
     name: "term",
     value: true
   },
   {
     type: "button",
-    label: "Save"
+    label: "Button"
   }
 
 ];
