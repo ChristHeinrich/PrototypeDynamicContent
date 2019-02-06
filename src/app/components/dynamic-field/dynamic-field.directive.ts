@@ -29,17 +29,20 @@ const componentMapper = {
 export class DynamicFieldDirective implements OnInit {
   @Input() field: FieldConfig;
   @Input() group: FormGroup;
+  @Input() layout: string;
   componentRef: any;
   constructor(
     private resolver: ComponentFactoryResolver,
     private container: ViewContainerRef
   ) {}
   ngOnInit() {
-    const factory = this.resolver.resolveComponentFactory(
-      componentMapper[this.field.type]
-    );
-    this.componentRef = this.container.createComponent(factory);
-    this.componentRef.instance.field = this.field;
-    this.componentRef.instance.group = this.group;
+    if (componentMapper[this.field.type]) { //layouts don't have a type and are ignored
+      const factory = this.resolver.resolveComponentFactory(
+        componentMapper[this.field.type]
+      );
+      this.componentRef = this.container.createComponent(factory);
+      this.componentRef.instance.field = this.field;
+      this.componentRef.instance.group = this.group;
+    }
   }
 }

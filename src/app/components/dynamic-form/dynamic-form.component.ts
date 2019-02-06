@@ -22,6 +22,7 @@ import { FieldConfig, Validator } from "../../types/field.interface";
 })
 export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];
+  @Input() layout: String;
 
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
 
@@ -35,6 +36,7 @@ export class DynamicFormComponent implements OnInit {
   ngOnInit() {
     this.form = this.createControl();
   }
+
 
   onSubmit(event: Event) {
     event.preventDefault();

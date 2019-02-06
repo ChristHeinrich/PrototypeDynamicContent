@@ -5,6 +5,9 @@ import {Validators} from '@angular/forms';
 // export const SIMPLELAYOUT: Layout[] = [
 export const SIMPLELAYOUT: FieldConfig[] = [
   {
+    layout: "verticalLayout"
+  },
+  {
     type: "input",
     label: "Username",
     inputType: "text",

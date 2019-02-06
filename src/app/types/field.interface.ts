@@ -4,6 +4,7 @@ export interface Validator {
   message: string;
 }
 export interface FieldConfig {
+  layout?: string;
   label?: string;
   name?: string;
   inputType?: string;
