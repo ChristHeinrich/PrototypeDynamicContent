@@ -1,9 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
-import { Validators } from "@angular/forms";
-import { FieldConfig } from "./types/field.interface";
+// import { Validators } from "@angular/forms";
+import {DslDescription, LayoutComponent} from './types/dsl.interface';
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
 import { LayoutService} from "./services/layout.service"
 import { DataService} from "./services/data.service"
+import {FieldConfig} from './types/field.interface';
 
 @Component({
   selector: "app-root",
@@ -11,18 +12,25 @@ import { DataService} from "./services/data.service"
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  layout: FieldConfig[];
-  regConfig: FieldConfig[];
-  data: any;
-  // layout: Layout;
+  dslDescription: DslDescription[];
+  data: any; //TODO: implement data-binding
+  // formConfig: LayoutComponent;
+  formConfig: FieldConfig;
 
   constructor(private layoutService: LayoutService, private dataService: DataService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
-  getLayout(): void {
-    this.layoutService.getLayout()
-      .subscribe(async layout => this.regConfig = layout);
+  getDsl(): void {
+    this.layoutService.getDsl()
+      .subscribe(async dslDescription => {
+        this.dslDescription = dslDescription;
+        // this.formConfig = this.getFormInformation("dtb.annualstamp.Record");
+      });
   }
+
+  // getFormInformation(id: string): FieldConfig {
+  //
+  // }
 
   getData(): void{
     this.dataService.getData()
@@ -30,7 +38,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.getLayout();
+    this.getDsl();
     this.getData();
   }
 
