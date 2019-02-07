@@ -1,4 +1,4 @@
-import { DslDescription } from '../../types/layout.interface';
+import { DslDescription } from '../../types/dsl.interface';
 
 export const DSL: DslDescription[] = [
   {

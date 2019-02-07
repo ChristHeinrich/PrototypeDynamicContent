@@ -8,12 +8,12 @@ import {
 } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FieldConfig } from "../../types/field.interface";
-import { InputComponent } from "../input/input.component";
-import { ButtonComponent } from "../button/button.component";
-import { SelectComponent } from "../select/select.component";
-import { DateComponent } from "../date/date.component";
-import { RadiobuttonComponent } from "../radiobutton/radiobutton.component";
-import { CheckboxComponent } from "../checkbox/checkbox.component";
+import { InputComponent } from "../componentLib/input/input.component";
+import { ButtonComponent } from "../componentLib/button/button.component";
+import { SelectComponent } from "../componentLib/select/select.component";
+import { DateComponent } from "../componentLib/date/date.component";
+import { RadiobuttonComponent } from "../componentLib/radiobutton/radiobutton.component";
+import { CheckboxComponent } from "../componentLib/checkbox/checkbox.component";
 
 const componentMapper = {
   input: InputComponent,
