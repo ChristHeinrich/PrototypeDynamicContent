@@ -1,15 +1,16 @@
 <div class="form">
-  <div style="text-align:center">
-    <h1>
+  <mat-toolbar>
+      <mat-toolbar-row>
       Prototype DSL interpretation in Angular
-    </h1>
-  </div>
+      </mat-toolbar-row>
+  </mat-toolbar>
+
   <!--<dynamic-form [fields]="regConfig" (submit)="submit($event)">-->
   <dynamic-form [fields]="formConfig" (submit)="submit($event)">
   </dynamic-form>
-  <div class="margin-top">
-    {{ form.value | json }}
-  </div>
+  <!--<div class="margin-top">-->
+    <!--{{ form.value | json }}-->
+  <!--</div>-->
 </div>
 
 <app-messages></app-messages>

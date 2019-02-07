@@ -4,6 +4,8 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./modules/material.module";
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InputComponent } from "./components/componentLib/input/input.component";
 import { ButtonComponent } from "./components/componentLib/button/button.component";
@@ -19,6 +21,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppLoadModule} from './modules/app-load-module.module';
+import { VerticalLayoutComponent } from './components/componentLib/vertical-layout/vertical-layout.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { HorizontalLayoutComponent } from './components/componentLib/horizontal-layout/horizontal-layout.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,9 @@ import { AppLoadModule} from './modules/app-load-module.module';
     CheckboxComponent,
     DynamicFieldDirective,
     DynamicFormComponent,
-    MessagesComponent
+    MessagesComponent,
+    VerticalLayoutComponent,
+    HorizontalLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,14 @@ import { AppLoadModule} from './modules/app-load-module.module';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     AppRoutingModule,
-    AppLoadModule
+    AppLoadModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -54,7 +68,8 @@ import { AppLoadModule} from './modules/app-load-module.module';
     SelectComponent,
     DateComponent,
     RadiobuttonComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    VerticalLayoutComponent
   ]
 })
 export class AppModule {}
