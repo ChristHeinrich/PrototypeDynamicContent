@@ -14,6 +14,7 @@ import { SelectComponent } from "../componentLib/select/select.component";
 import { DateComponent } from "../componentLib/date/date.component";
 import { RadiobuttonComponent } from "../componentLib/radiobutton/radiobutton.component";
 import { CheckboxComponent } from "../componentLib/checkbox/checkbox.component";
+import { VerticalLayoutComponent } from "../componentLib/vertical-layout/vertical-layout.component";
 
 const componentMapper = {
   input: InputComponent,
@@ -21,7 +22,7 @@ const componentMapper = {
   select: SelectComponent,
   date: DateComponent,
   radiobutton: RadiobuttonComponent,
-  checkbox: CheckboxComponent
+  checkbox: VerticalLayoutComponent
 };
 @Directive({
   selector: "[dynamicField]"
