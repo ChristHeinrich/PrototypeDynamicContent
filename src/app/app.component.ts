@@ -1,6 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
-import { Validators } from "@angular/forms";
-import { FieldConfig } from "./types/field.interface";
+// import { Validators } from "@angular/forms";
+// import { FieldConfig } from "./types/field.interface";
+import { App } from "./types/layout.interface";
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
 import { LayoutService} from "./services/layout.service"
 import { DataService} from "./services/data.service"
@@ -11,17 +12,18 @@ import { DataService} from "./services/data.service"
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  layout: FieldConfig[];
-  regConfig: FieldConfig[];
+  appsDescription: App[];
+  // regConfig: Layout[];
   data: any;
-  // layout: Layout;
+  // appsDescription: Layout;
 
   constructor(private layoutService: LayoutService, private dataService: DataService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
-  getLayout(): void {
-    this.layoutService.getLayout()
-      .subscribe(async layout => this.regConfig = layout);
+  getDsl(): void {
+    this.layoutService.getDsl()
+      // .subscribe(async appsDescription => this.regConfig = appsDescription);
+      .subscribe(async appsDescription => this.appsDescription = appsDescription);
   }
 
   getData(): void{
@@ -30,7 +32,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.getLayout();
+    this.getDsl();
     this.getData();
   }
 

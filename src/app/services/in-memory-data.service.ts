@@ -1,7 +1,8 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { FieldConfig } from "../types/field.interface";
+// import { FieldConfig } from "../types/field.interface";
 import { Injectable } from '@angular/core';
-import { SIMPLELAYOUT } from '../samples/layouts/simple-layout';
+import { DSL } from '../samples/layouts/simple-dsl-layout';
+// import { SIMPLELAYOUT } from '../samples/layouts/simple-appsDescription';
 
 
 
@@ -12,12 +13,12 @@ export class InMemoryDataService implements InMemoryDbService{
 
   constructor() { }
   createDb() {
-    const layout = SIMPLELAYOUT;
-    return {layout};
+    const dsl = DSL;
+    return {dsl};
   }
 
-  genId(layout): number {
-    return layout.length > 0 ? Math.max(...layout.map(hero => hero.id)) + 1 : 11;
-  }
+  // genId(appsDescription): number {
+  //   return appsDescription.length > 0 ? Math.max(...appsDescription.map(appsDescription => appsDescription.id)) + 1 : 11;
+  // }
 
 }

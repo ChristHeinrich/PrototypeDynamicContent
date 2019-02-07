@@ -20,6 +20,7 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppLoadModule} from './modules/app-load-module.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

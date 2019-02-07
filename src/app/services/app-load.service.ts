@@ -17,7 +17,7 @@ export class AppLoadService {
       }, 1000);
     });
   }
-
+//TODO: rename
   getSettings(): void {
     this.layoutService.fetchLayout()
       .subscribe(async layout => {

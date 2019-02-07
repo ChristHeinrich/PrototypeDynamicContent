@@ -1,3 +1,3 @@
 export class Layout {
-  //TODO: define layout
+  //TODO: define appsDescription
 }

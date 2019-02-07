@@ -12,8 +12,9 @@ import {
   Validators,
   FormControl
 } from "@angular/forms";
-import { FieldConfig, Validator } from "../../types/field.interface";
-
+// import { FieldConfig, Validator } from "../../types/field.interface";
+import { LayoutComponent } from "../../types/layout.interface";
+import { Validator } from "../../types/field.interface";
 @Component({
   exportAs: "dynamicForm",
   selector: "dynamic-form",
@@ -26,7 +27,7 @@ import { FieldConfig, Validator } from "../../types/field.interface";
   styles: []
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() fields: FieldConfig[] = [];
+  @Input() fields: LayoutComponent[] = [];
 
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
 
