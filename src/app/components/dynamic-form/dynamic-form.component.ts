@@ -18,7 +18,14 @@ import { FieldConfig, Validator } from "../../types/field.interface";
   exportAs: "dynamicForm",
   selector: "dynamic-form",
   templateUrl: "./dynamic-form.component.html",
-  styles: []
+  styles: [`
+    .form-inline {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+  
+  `]
 })
 export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];

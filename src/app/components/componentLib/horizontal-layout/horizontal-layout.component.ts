@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FieldConfig} from '../../../types/field.interface';
 import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-horizontal-layout',
   template: `<div class="horizontal">
-  
-    <app-select class="border"></app-select>
-    <app-select class="border"></app-select>
+    <!--<form>-->
+      <!--<input type="text" name="id" maxlength="30" value="" />-->
+      <!--<input type="text" name="pw" maxlength="30" value="" />-->
+    <!--</form>-->
+
+    <dynamic-form [fields]="fields">  </dynamic-form>
+    <!--<dynamic-form [fields]="fields">  </dynamic-form>-->
   </div>`,
   styles: [`
+    /*input {display: inline}*/
     .horizontal {
       display: flex;
       flex-direction: row;
@@ -24,7 +29,7 @@ import {FormGroup} from '@angular/forms';
   `]
 })
 export class HorizontalLayoutComponent implements OnInit {
-  field: FieldConfig;
+  @Input() fields: FieldConfig[] = [];
   group: FormGroup;
   constructor() {}
   ngOnInit() {}

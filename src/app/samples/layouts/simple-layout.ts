@@ -2,8 +2,8 @@ import { Layout } from '../../types/layout';
 import {FieldConfig} from '../../types/field.interface';
 import {Validators} from '@angular/forms';
 
-// export const SIMPLELAYOUT: Layout[] = [
-export const SIMPLELAYOUT: FieldConfig[] = [
+export const SIMPLELAYOUT: Layout[] = [
+// export const SIMPLELAYOUT: FieldConfig[] = [
   {
     layout: "verticalLayout"
   },

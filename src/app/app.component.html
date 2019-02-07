@@ -5,9 +5,19 @@
       </mat-toolbar-row>
   </mat-toolbar>
 
+  <app-vertical-layout [fields]="formConfig">
+    <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
+  </app-vertical-layout>
+  <app-horizontal-layout [fields]="formConfig">
+    <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
+  </app-horizontal-layout>
+
+  <!--<div>-->
+    <!--<dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>-->
+  <!--</div>-->
   <!--<dynamic-form [fields]="regConfig" (submit)="submit($event)">-->
-  <dynamic-form [fields]="formConfig" (submit)="submit($event)">
-  </dynamic-form>
+
+
   <!--<div class="margin-top">-->
     <!--{{ form.value | json }}-->
   <!--</div>-->
