@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
-import { FlexLayoutModule } from "@angular/flex-layout";
+
 import {
   MatButtonModule,
   MatIconModule,
@@ -31,8 +31,7 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatCheckboxModule,
-    MatRadioModule,
-    FlexLayoutModule
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,

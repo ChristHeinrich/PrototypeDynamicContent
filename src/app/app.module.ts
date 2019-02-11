@@ -22,7 +22,6 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppLoadModule} from './modules/app-load-module.module';
 import { VerticalLayoutComponent } from './components/componentLib/vertical-layout/vertical-layout.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
 import { HorizontalLayoutComponent } from './components/componentLib/horizontal-layout/horizontal-layout.component';
 
 @NgModule({
@@ -57,8 +56,7 @@ import { HorizontalLayoutComponent } from './components/componentLib/horizontal-
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule,
-    FlexLayoutModule
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
