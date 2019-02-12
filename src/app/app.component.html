@@ -13,9 +13,15 @@
     <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
   </app-horizontal-layout>-->
 
-  <div *ngFor="let child of formConfig.children">
-    <dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>
-  </div>
+  <!--<div *ngFor="let child of formConfig.children">-->
+    <!--child: {{child.name}}-->
+    <!--<dynamic-form [children]="child">  </dynamic-form>-->
+    <!--&lt;!&ndash;<dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>&ndash;&gt;-->
+  <!--</div>-->
+
+  <dynamic-form [children]="formConfig.children" [type]="formConfig.type">  </dynamic-form>
+  <!--<dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>-->
+
 
 
 

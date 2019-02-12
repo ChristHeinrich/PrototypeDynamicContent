@@ -6,7 +6,7 @@ import {DynamicFormComponent} from '../../dynamic-form/dynamic-form.component';
 @Component({
   selector: 'app-vertical-layout',
   template: `<div class="vertical">
-    <dynamic-form [fields]="fields">  </dynamic-form>
+    <!--<dynamic-form [fields]="fields">  </dynamic-form>-->
   </div>`,
   styles: [`
     .vertical {

@@ -18,9 +18,6 @@ export class AppComponent {
   data: any; //TODO: implement data-binding
   formConfig: LayoutComponent;
 
-  // formConfig: FieldConfig;
-  // formConfig: FieldConfig[];
-
   constructor(private layoutService: LayoutService, private dataService: DataService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
@@ -37,6 +34,7 @@ export class AppComponent {
   getFormInformation(id: string): LayoutComponent {
     //TODO: refactor
     return this.dslDescription[0].apps[0].forms[1].states[0].content;
+    // return this.dslDescription[0].apps[0].forms[0].states[0].content;
   }
 
   getData(): void{
@@ -46,7 +44,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.getDsl();
-    this.getData();;
+    this.getData();
   }
 
 

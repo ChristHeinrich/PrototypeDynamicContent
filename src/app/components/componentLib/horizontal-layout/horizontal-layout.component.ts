@@ -10,7 +10,7 @@ import {FormGroup} from '@angular/forms';
       <!--<input type="text" name="pw" maxlength="30" value="" />-->
     <!--</form>-->
 
-    <dynamic-form [fields]="fields">  </dynamic-form>
+    <!--<dynamic-form [fields]="fields">  </dynamic-form>-->
     <!--<dynamic-form [fields]="fields">  </dynamic-form>-->
   </div>`,
   styles: [`
