@@ -4,8 +4,8 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Output
-} from "@angular/core";
+  Output, TemplateRef, ViewChild
+} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -29,11 +29,18 @@ import { FieldConfig, Validator } from "../../types/field.interface";
 })
 export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];
-  @Input() layout: String;
+  @Input() type: string;
+  @Input() children: any;
+  @Input()  layoutOfParent : string;
 
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
 
+
   form: FormGroup;
+  isLayoutVertical : boolean;
+  baseType : string;
+  actualLayout: string = "smartdesign.base.VerticalLayout";
+
 
   get value() {
     return this.form.value;
@@ -42,6 +49,55 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.createControl();
+    switch (this.type){
+      case "smartdesign.base.ZLayout":{
+        this.baseType ="layout";
+        break;
+      }
+      case "smartdesign.base.VerticalLayout":{
+        this.baseType ="layout";
+        break;
+      }
+      case "smartdesign.base.HorizontalLayout":{
+        this.baseType ="layout";
+        break;
+      }
+      case "smartdesign.base.Message":{
+        this.baseType ="component";
+        break;
+      }
+      case "smartdesign.base.FieldGroup":{
+        this.baseType ="group";
+        break;
+      }
+      case "smartdesign.base.Field":{
+        this.baseType ="component";
+        break;
+      }
+      case "smartdesign.base.EmbeddedList":{
+        this.baseType ="component";
+        break;
+      }
+      case "smartdesign.base.LinkField":{
+        this.baseType ="component";
+        break;
+      }
+      default:{
+        console.log("unknown type: " + this.type);
+        break;
+      }
+    }
+    if (this.baseType==="layout"){
+      this.actualLayout = this.type;
+    }
+      else{
+        this.actualLayout = this.layoutOfParent;
+    }
+    this.isLayoutVertical = this.actualLayout === "smartdesign.base.VerticalLayout";
+    console.log(this.children);
+    console.log(this.actualLayout);
+    console.log(this.type);
+    console.log(this.baseType);
   }
 
 
@@ -57,14 +113,14 @@ export class DynamicFormComponent implements OnInit {
 
   createControl() {
     const group = this.fb.group({});
-    this.fields.forEach(field => {
+   /* this.fields.forEach(field => {
       if (field.type === "button") return;
       const control = this.fb.control(
         field.value,
         this.bindValidations(field.validations || [])
       );
       group.addControl(field.name, control);
-    });
+    });*/
     return group;
   }
 
