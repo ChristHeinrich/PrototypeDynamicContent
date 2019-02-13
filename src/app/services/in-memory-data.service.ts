@@ -1,7 +1,8 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 // import { FieldConfig } from "../types/field.interface";
 import { Injectable } from '@angular/core';
-import { DSL } from '../samples/layouts/simple-dsl-layout';
+// import { DSL } from '../samples/layouts/simple-dsl-layout';
+import { DSL } from '../samples/layouts/dtb-layout';
 // import { SIMPLELAYOUT } from '../samples/layouts/simple-dslDescription';
 
 

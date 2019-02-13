@@ -5,10 +5,9 @@
       </mat-toolbar-row>
   </mat-toolbar>
 </div>
-
-<div>
-  <smartdesign-base-Field-input></smartdesign-base-Field-input>
-</div>
+<!--<div>-->
+  <!--<smartdesign-base-Field-input_old></smartdesign-base-Field-input_old>-->
+<!--</div>-->
   <!--<app-vertical-layout [fields]="formConfig">
     <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
   </app-vertical-layout>
@@ -22,10 +21,7 @@
     <!--&lt;!&ndash;<dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>&ndash;&gt;-->
   <!--</div>-->
 
+<div style="margin: 10px">
   <dynamic-form [children]="formConfig.children" [type]="formConfig.type">  </dynamic-form>
-  <!--<dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>-->
-
-
-
-
+</div>
 <app-messages></app-messages>

@@ -4,7 +4,12 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./modules/material.module";
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule,
+         MatIconModule,
+         MatToolbarModule,
+         MatButtonModule,
+         MatFormFieldModule,
+         MatInputModule } from '@angular/material';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InputComponent } from "./components/componentLib/input/input.component";
@@ -23,8 +28,9 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { AppLoadModule} from './modules/app-load-module.module';
 import { VerticalLayoutComponent } from './components/componentLib/vertical-layout/vertical-layout.component';
 import { HorizontalLayoutComponent } from './components/componentLib/horizontal-layout/horizontal-layout.component';
-
-import {smartdesignBaseFieldInput} from './components/componentLib/smartdesign-base-Field-input/smartdesign-base-Field-input.component';
+import { DynamicComponentComponent } from './components/dynamic-component/dynamic-component.component';
+import { SmartdesignBaseFieldGroupComponent } from './components/componentLib/smartdesign-base-field-group/smartdesign-base-field-group.component';
+import { SmartdesignBaseFieldComponent } from './components/componentLib/smartdesign-base-field/smartdesign-base-field.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import {smartdesignBaseFieldInput} from './components/componentLib/smartdesign-b
     MessagesComponent,
     VerticalLayoutComponent,
     HorizontalLayoutComponent,
-    smartdesignBaseFieldInput
+    DynamicComponentComponent,
+    SmartdesignBaseFieldGroupComponent,
+    SmartdesignBaseFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,7 @@ import {smartdesignBaseFieldInput} from './components/componentLib/smartdesign-b
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -70,7 +78,9 @@ import {smartdesignBaseFieldInput} from './components/componentLib/smartdesign-b
     DateComponent,
     RadiobuttonComponent,
     CheckboxComponent,
-    VerticalLayoutComponent
+    VerticalLayoutComponent,
+    SmartdesignBaseFieldGroupComponent,
+    SmartdesignBaseFieldComponent
   ]
 })
 export class AppModule {}

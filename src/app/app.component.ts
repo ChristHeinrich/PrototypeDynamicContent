@@ -1,12 +1,11 @@
 import { Component, ViewChild } from "@angular/core";
+//TODO: check validation stuff
 // import { Validators } from "@angular/forms";
+//import {Validators} from '@angular/forms';
 import {DslDescription, LayoutComponent} from './types/dsl.interface';
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
 import { LayoutService} from "./services/layout.service"
 import { DataService} from "./services/data.service"
-import {FieldConfig} from './types/field.interface';
-import {Layout} from './types/layout';
-import {Validators} from '@angular/forms';
 
 @Component({
   selector: "app-root",
@@ -30,11 +29,9 @@ export class AppComponent {
       });
   }
 
-  // getFormInformation(id: string): FieldConfig[] {
   getFormInformation(id: string): LayoutComponent {
     //TODO: refactor
     return this.dslDescription[0].apps[0].forms[1].states[0].content;
-    // return this.dslDescription[0].apps[0].forms[0].states[0].content;
   }
 
   getData(): void{

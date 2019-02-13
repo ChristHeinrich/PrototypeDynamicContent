@@ -1,6 +1,6 @@
 import { Layout } from '../../types/layout';
 
-export const LAYOUT: Layout[] = [
+export const DSL: Layout[] = [
   {
     "apps" : [ {
       "id" : "dtb.annualstamp",
