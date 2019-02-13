@@ -51,7 +51,8 @@ export class DynamicFormComponent implements OnInit {
   isLayoutVertical : boolean;
   baseType : string;
   actualLayout: string = "smartdesign.base.VerticalLayout";
-  testField: any =   {
+  colorcode: number;
+ /* testField: any =   {
     type: "input",
     label: "Username",
     inputType: "text",
@@ -68,7 +69,7 @@ export class DynamicFormComponent implements OnInit {
         message: "Accept only text"
       }
     ]
-  }
+  }*/
 
 
 

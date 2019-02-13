@@ -24,6 +24,8 @@ import { AppLoadModule} from './modules/app-load-module.module';
 import { VerticalLayoutComponent } from './components/componentLib/vertical-layout/vertical-layout.component';
 import { HorizontalLayoutComponent } from './components/componentLib/horizontal-layout/horizontal-layout.component';
 
+import {smartdesignBaseFieldInput} from './components/componentLib/smartdesign-base-Field-input/smartdesign-base-Field-input.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { HorizontalLayoutComponent } from './components/componentLib/horizontal-
     DynamicFormComponent,
     MessagesComponent,
     VerticalLayoutComponent,
-    HorizontalLayoutComponent
+    HorizontalLayoutComponent,
+    smartdesignBaseFieldInput
   ],
   imports: [
     BrowserModule,
