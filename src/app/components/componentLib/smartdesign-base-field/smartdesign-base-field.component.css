@@ -1,0 +1,9 @@
+.smartdesign-base-field-input {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.smartdesign-base-field-input-full-width {
+  width: 100%;
+}
