@@ -1,0 +1,4 @@
+.smartdesign-base-horizontalLayout {
+  display: flex;
+  flex-direction: row;
+}

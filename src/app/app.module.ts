@@ -32,6 +32,9 @@ import { DynamicComponentComponent } from './components/dynamic-component/dynami
 import { SmartdesignBaseFieldGroupComponent } from './components/componentLib/smartdesign-base-field-group/smartdesign-base-field-group.component';
 import { SmartdesignBaseFieldComponent } from './components/componentLib/smartdesign-base-field/smartdesign-base-field.component';
 
+import {smartdesignBaseVerticalLayout} from './components/componentLib/smartdesign-base-verticalLayout/smartdesign-base-verticalLayout.component'
+import {smartdesignBaseHorizontalLayout} from './components/componentLib/smartdesign-base-horizontalLayout/smartdesign-base-horizontalLayout.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,9 @@ import { SmartdesignBaseFieldComponent } from './components/componentLib/smartde
     HorizontalLayoutComponent,
     DynamicComponentComponent,
     SmartdesignBaseFieldGroupComponent,
-    SmartdesignBaseFieldComponent
+    SmartdesignBaseFieldComponent,
+    smartdesignBaseVerticalLayout,
+    smartdesignBaseHorizontalLayout
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,7 @@ import { SmartdesignBaseFieldComponent } from './components/componentLib/smartde
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

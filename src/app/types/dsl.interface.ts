@@ -1,8 +1,9 @@
 export interface LayoutComponent {
-  name: string,
-  type: string,
+  name?: string,
+  type?: string,
   ratio?: number[],
-  children: LayoutComponent[];
+  children?: LayoutComponent[];
+  datasource?: string
 }
 
 export interface State {
@@ -10,7 +11,8 @@ export interface State {
   content: LayoutComponent,
   height? : string,
   width?: string,
-  padding?: string
+  padding?: string,
+  header?: any
 }
 
 export interface Form {
@@ -32,8 +34,11 @@ export interface App {
   navigation?: any,
   commands?: any[],
   translations? :any[]
+
 }
 
 export interface DslDescription {
-  apps : App[]
+  apps : App[],
+  appNetwork?: any,
+  scripting?: any
 }

@@ -1,0 +1,4 @@
+.smartdesign-base-verticalLayout {
+  display: flex;
+  flex-direction: column;
+}
