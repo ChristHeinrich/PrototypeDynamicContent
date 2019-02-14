@@ -4,7 +4,7 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Output, TemplateRef, ViewChild
+  Output, TemplateRef, ViewChild, ViewContainerRef
 } from '@angular/core';
 import {
   FormGroup,
@@ -13,6 +13,7 @@ import {
   FormControl
 } from "@angular/forms";
 import { FieldConfig, Validator } from "../../types/field.interface";
+import {LayoutComponent} from '../../types/dsl.interface';
 
 @Component({
   exportAs: "dynamicForm",
@@ -39,55 +40,26 @@ import { FieldConfig, Validator } from "../../types/field.interface";
   `]
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() type: string;
-  @Input() children: any[];
-  @Input()  layoutOfParent : string;
+  @Input() formConfig: LayoutComponent;
+  @Input() layoutOfParent : string;
+  @Input() parent: ViewContainerRef;
+  // form: FormGroup;
 
-  // @Output() submit: EventEmitter<any> = new EventEmitter<any>();
+  public container: ViewContainerRef;
 
-
-  form: FormGroup;
   isLayoutVertical : boolean;
   baseType : string;
   actualLayout: string = "smartdesign.base.VerticalLayout";
 
-  get value() {
-    return this.form.value;
+  // get value() {
+  //   return this.form.value;
+  // }
+  constructor(private fb: FormBuilder, private viewContainerRef: ViewContainerRef) {
+    this.container = viewContainerRef;
+    console.log(this.container)
   }
-  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.form = this.createControl();
-    switch (this.type){
-      case "smartdesign.base.ZLayout":
-      case "smartdesign.base.VerticalLayout":
-      case "smartdesign.base.HorizontalLayout":{
-        this.baseType ="layout";
-        break;
-      }
-      case "smartdesign.base.FieldGroup":{
-        this.baseType ="group";
-        break;
-      }
-      case "smartdesign.base.Message":
-      case "smartdesign.base.Field":
-      case "smartdesign.base.EmbeddedList":
-      case "smartdesign.base.LinkField":{
-        this.baseType ="component";
-        break;
-      }
-      default:{
-        console.log("unknown type: " + this.type);
-        break;
-      }
-    }
-    if (this.baseType==="layout"){
-      this.actualLayout = this.type;
-    }
-      else{
-        this.actualLayout = this.layoutOfParent;
-    }
-    this.isLayoutVertical = this.actualLayout === "smartdesign.base.VerticalLayout";
   }
 
 

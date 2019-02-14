@@ -1,23 +1,8 @@
-
-<div class="type">  {{type}}</div>
-<div *ngFor="let child of children" class="nesting">
-  <p class="name">
-    <!--{{child.name}} {{ child.children && child.children.length}}-->
-      <dynamic-form [children]="child.children" [type]="child.type">  </dynamic-form>
-  </p>
-
-  <ng-container dynamicComponent [component]="child"  [parent]="child"> </ng-container>
+<div *ngIf="formConfig">
+  <ng-container  dynamicComponent [component]="formConfig" [parent]="parent" >
+      <div *ngFor="let component of formConfig.children" class="nesting">
+        <div class="name">  {{component.name}}</div>
+        <dynamic-form [formConfig]="component" [parent]="container"></dynamic-form>
+      </div>
+  </ng-container>
 </div>
-
-
-
-<!--<ng-template #HorizontalLayout>-->
-  <!--<div>-->
-    <!--<form class="dynamic-form" [formGroup]="form" (submit)="onSubmit($event)">-->
-      <!--<ng-container *ngFor="let field of fields;" dynamicField [field]="field" [group]="form">-->
-      <!--</ng-container>-->
-    <!--</form>-->
-<!--</div></ng-template>-->
-
-
-<!--<ng-template #VerticalLayout><span>This is the vertical Layout Template for {{children.name}}</span></ng-template>-->

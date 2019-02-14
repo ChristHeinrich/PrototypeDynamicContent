@@ -33,10 +33,12 @@ import { SmartdesignBaseFieldGroupComponent } from './components/componentLib/sm
 import { SmartdesignBaseFieldComponent } from './components/componentLib/smartdesign-base-field/smartdesign-base-field.component';
 
 import {smartdesignBaseVerticalLayout} from './components/componentLib/smartdesign-base-verticalLayout/smartdesign-base-verticalLayout.component'
-import {smartdesignBaseHorizontalLayout} from './components/componentLib/smartdesign-base-horizontalLayout/smartdesign-base-horizontalLayout.component'
+import {smartdesignBaseHorizontalLayout} from './components/componentLib/smartdesign-base-horizontalLayout/smartdesign-base-horizontalLayout.component';
+import { EntryPointDirective } from './entry-point.directive'
 
 @NgModule({
   declarations: [
+    EntryPointDirective,
     AppComponent,
     InputComponent,
     ButtonComponent,
