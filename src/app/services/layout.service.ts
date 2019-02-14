@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Layout } from '../types/dslDescription';
 import { DslDescription } from '../types/dsl.interface';
-// import { FieldConfig } from "../types/field.interface";
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
