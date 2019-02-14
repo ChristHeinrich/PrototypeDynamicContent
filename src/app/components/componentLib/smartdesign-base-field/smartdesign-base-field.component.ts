@@ -13,7 +13,6 @@ inputType : string;
 
   constructor(public componentService : ComponentTypeService) {
     this.inputType = this.findCorrespondingType(componentService.types);
-    console.log(this.inputType);
     this.componentService.clearTypes();
   }
 
