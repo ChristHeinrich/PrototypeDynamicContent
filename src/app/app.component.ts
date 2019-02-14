@@ -4,8 +4,9 @@ import { Component, ViewChild } from "@angular/core";
 //import {Validators} from '@angular/forms';
 import {DslDescription, LayoutComponent} from './types/dsl.interface';
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
-import { LayoutService} from "./services/layout.service"
-import { DataService} from "./services/data.service"
+import { LayoutService} from "./services/layout.service";
+import { DataService} from "./services/data.service";
+import {ComponentTypeService} from './services/componentType.service';
 
 @Component({
   selector: "app-root",
@@ -17,7 +18,7 @@ export class AppComponent {
   data: any; //TODO: implement data-binding
   formConfig: LayoutComponent;
 
-  constructor(private layoutService: LayoutService, private dataService: DataService) { }
+  constructor(private layoutService: LayoutService, private dataService: DataService, private componentService : ComponentTypeService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
   getDsl(): void {
@@ -26,6 +27,7 @@ export class AppComponent {
         this.dslDescription = dslDescription;
         this.formConfig = this.getFormInformation("dtb.annualstamp.Record");
         console.log(this.formConfig);
+        this.componentService.setMetaData(this.dslDescription[0].apps[9].types); //TODO hardcoded metadata replaced by a dynamic search
       });
   }
 

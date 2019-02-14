@@ -13,6 +13,7 @@ import {SmartdesignBaseFieldComponent} from '../componentLib/smartdesign-base-fi
 import {SmartdesignBaseFieldGroupComponent} from '../componentLib/smartdesign-base-field-group/smartdesign-base-field-group.component'
 import {FieldConfig} from '../../types/field.interface';
 import {FormGroup} from '@angular/forms';
+import {ComponentTypeService} from '../../services/componentType.service';
 
 const componentMapper = {
   "smartdesign.base.Field":SmartdesignBaseFieldComponent,
@@ -37,7 +38,8 @@ export class DynamicComponentComponent implements OnInit {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private container: ViewContainerRef
+    private container: ViewContainerRef,
+    private componentService : ComponentTypeService
   ) {}
 
   ngOnInit() {
@@ -45,6 +47,7 @@ export class DynamicComponentComponent implements OnInit {
       const factory = this.resolver.resolveComponentFactory(
         componentMapper[this.component.type]
       );
+      this.componentService.addTypes(this.component);
       this.componentRef = this.container.createComponent(factory);
       this.componentRef.instance.field = this.component;
       // this.componentRef.instance.group = this.group;
