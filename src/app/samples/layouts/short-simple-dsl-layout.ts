@@ -347,7 +347,7 @@ export const DSL: DslDescription[] = [
                   "children": [
                     {
                       "type": "smartdesign.base.Message",
-                      "name": "nachrichtStartrechtTurnPortal",
+                      "name": "nachrichtStartrechtTurnPortal2",
                       "level": "INFO",
                       "message": {
                         "inputs": {},
@@ -367,84 +367,13 @@ export const DSL: DslDescription[] = [
                             {
                               "type": "smartdesign.base.Field",
                               "ref": "STAMPTYPE"
-                            },
-                            {
-                              "type": "smartdesign.base.Field",
-                              "ref": "CORRESPONDING_GYMNAST"
-                            },
-                            {
-                              "type": "smartdesign.base.Field",
-                              "ref": "STAMPVALIDFROM"
-                            },
-                            {
-                              "type": "smartdesign.base.Field",
-                              "ref": "STAMPVALIDUNTIL"
                             }
                           ],
                           "showFieldCaptions": true,
                           "caption": "Allgemeine Informationen"
-                        },
-                        {
-                          "type": "smartdesign.base.FieldGroup",
-                          "name": "finanzen",
-                          "children": [
-                            {
-                              "type": "smartdesign.base.Field",
-                              "ref": "STAMPFEE"
-                            }
-                          ],
-                          "showFieldCaptions": true,
-                          "caption": "Finanzielle Informationen"
                         }
                       ],
                       "minimumColumnWidth": 400
-                    },
-                    {
-                      "type": "smartdesign.base.FieldGroup",
-                      "name": "verknuepfungen",
-                      "children": [
-                        {
-                          "type": "smartdesign.base.LinkField",
-                          "ref": "ANNUALSTAMP_CLUB_LINKFIELD"
-                        }
-                      ],
-                      "showFieldCaptions": true,
-                      "caption": "Verknüpfungen"
-                    },
-                    {
-                      "type": "smartdesign.base.EmbeddedList",
-                      "name": "linkstartrechte",
-                      "caption": "Verknüpfte Startrechte",
-                      "maxItemsShown": 7,
-                      "extendedListEntryCaption": "Extended list",
-                      "datasource": "linkListStartinglicence",
-                      "extendedListEntryMode": "SHOW",
-                      "emptyListMessage": "No data records exist",
-                      "hideWhenEmpty": true
-                    },
-                    {
-                      "type": "smartdesign.base.FieldGroup",
-                      "name": "paymentinfo",
-                      "children": [
-                        {
-                          "type": "smartdesign.base.LinkField",
-                          "ref": "ANNUALSTAMP_OPENITEMS_LINKFIELD"
-                        }
-                      ],
-                      "showFieldCaptions": true,
-                      "caption": "Zugehörige Gebühren"
-                    },
-                    {
-                      "type": "smartdesign.base.FieldGroup",
-                      "name": "notizen",
-                      "children": [
-                        {
-                          "type": "smartdesign.base.Field",
-                          "ref": "NOTES2"
-                        }
-                      ],
-                      "showFieldCaptions": true,
-                      "caption": "Anmerkungen"
                     }
                   ]
                 }
@@ -480,99 +409,13 @@ export const DSL: DslDescription[] = [
                             {
                               "type": "smartdesign.base.Field",
                               "ref": "STAMPTYPE"
-                            },
-                            {
-                              "type": "smartdesign.base.LinkField",
-                              "ref": "ANNUALSTAMP_GYMNAST_LINKFIELD",
-                              "caption": "Zugehörige Person"
                             }
                           ],
                           "showFieldCaptions": true,
                           "caption": "Allgemeine Informationen"
-                        },
-                        {
-                          "type": "smartdesign.base.FieldGroup",
-                          "name": "finanzen",
-                          "children": [
-                            {
-                              "type": "smartdesign.base.Field",
-                              "ref": "STAMPFEE"
-                            }
-                          ],
-                          "showFieldCaptions": true,
-                          "caption": "Finanzielle Informationen"
-                        },
-                        {
-                          "type": "smartdesign.base.FieldGroup",
-                          "name": "verknuepfungen",
-                          "children": [
-                            {
-                              "type": "smartdesign.base.LinkField",
-                              "ref": "ANNUALSTAMP_CLUB_LINKFIELD"
-                            }
-                          ],
-                          "showFieldCaptions": true,
-                          "caption": "Verknüpfungen"
-                        },
-                        {
-                          "type": "smartdesign.base.LinkListGroupedByRoles",
-                          "name": "linkstartrechte",
-                          "datasource": "linkListStartinglicence",
-                          "emptyListMessage": "No data records exist",
-                          "caption": "Verknüpfte Startrechte",
-                          "deleteMessage": "Remove link",
-                          "addMessage": "Create link"
                         }
                       ],
                       "minimumColumnWidth": 400
-                    },
-                    {
-                      "type": "smartdesign.base.FieldGroup",
-                      "name": "notizen",
-                      "children": [
-                        {
-                          "type": "smartdesign.base.Field",
-                          "ref": "NOTES2"
-                        }
-                      ],
-                      "showFieldCaptions": true,
-                      "caption": "Anmerkungen"
-                    },
-                    {
-                      "type": "smartdesign.base.Message",
-                      "name": "nachrichtFuerAdministratoren",
-                      "visibility": {
-                        "type": "script",
-                        "inputs": {},
-                        "source": "(function () {\r\n    _monitoring.init();\r\n    return user.isMember(-10);\r\n})();\r\n"
-                      },
-                      "level": "WARN",
-                      "message": {
-                        "inputs": {},
-                        "source": "(function () {\r\n    _monitoring.init();\r\n    return Translation.MESSAGE_KNOWWHATYOUDO.get();\r\n})();\r\n"
-                      },
-                      "showIcon": true
-                    },
-                    {
-                      "type": "smartdesign.base.FieldGroup",
-                      "name": "administrativeFelder",
-                      "visibility": {
-                        "type": "script",
-                        "inputs": {},
-                        "source": "(function () {\r\n    _monitoring.init();\r\n    return user.isMember(-10);\r\n})();\r\n"
-                      },
-                      "children": [
-                        {
-                          "type": "smartdesign.base.Field",
-                          "ref": "STAMPVALIDFROM"
-                        },
-                        {
-                          "type": "smartdesign.base.Field",
-                          "ref": "STAMPVALIDUNTIL"
-                        }
-                      ],
-                      "showFieldCaptions": true,
-                      "caption": "Zusätzliche Felder für geschultes Personal"
                     }
                   ]
                 }
@@ -760,4 +603,4 @@ export const DSL: DslDescription[] = [
       }
 
     ]
-}];
+  }];
