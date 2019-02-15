@@ -7,3 +7,13 @@
 .smartdesign-base-field-input-full-width {
   width: 100%;
 }
+
+.smartdesign-base-field-input-dummy {
+  width: 350px;
+  height: 25px;
+  pointer-events:none;
+  background-color: lightgrey;
+  font-family: Roboto;
+  font-size: 10px;
+  border: 1px dashed grey;
+}

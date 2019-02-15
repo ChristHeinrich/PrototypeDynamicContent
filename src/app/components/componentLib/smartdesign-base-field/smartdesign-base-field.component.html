@@ -2,7 +2,7 @@
 <div [ngSwitch]="inputType">
   <div *ngSwitchCase="'STRING'" [ngTemplateOutlet]="InputField"></div>
   <div *ngSwitchCase="'DATETIME'" [ngTemplateOutlet]="Datepicker"></div>
-  <div *ngSwitchDefault>DUMMY</div>
+  <div *ngSwitchDefault [ngTemplateOutlet]="DUMMY"></div>
 </div>
 
 
@@ -20,4 +20,12 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+</ng-template>
+
+<ng-template #DUMMY>
+  <form class="smartdesign-base-field-input">
+    <mat-form-field class="smartdesign-base-field-input-dummy">
+      <input matInput placeholder="'dummy-component for {{actualTypeInfo}}" value="">
+    </mat-form-field>
+  </form>
 </ng-template>
