@@ -32,7 +32,7 @@ export class SmartdesignBaseFieldComponent implements OnInit {
   }
 
   private setActualType(actualType: any) {
-    this.actualTypeInfo = actualType.type + ": " + actualType.name;
+    this.actualTypeInfo = actualType.type.toLowerCase() + ": " + actualType.name;
   }
 
   ngOnInit() {

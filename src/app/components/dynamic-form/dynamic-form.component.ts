@@ -19,25 +19,7 @@ import {LayoutComponent} from '../../types/dsl.interface';
   exportAs: "dynamicForm",
   selector: "dynamic-form",
   templateUrl: "./dynamic-form.component.html",
-  styles: [`
-    .type {
-      padding: 5px;
-      font-family: Roboto;
-      font-size: 12px;
-      color: darkgreen;
-    }
-    .name {
-      padding: 5px;
-      font-family: Roboto;
-      font-size: 12px;
-      color: darkblue;
-    }
-    .nesting {
-      border: 1px solid black
-    }
-    
-  
-  `]
+  styleUrls: ['./dynamic-form.component.css']
 })
 export class DynamicFormComponent implements OnInit {
   @Input() formConfig: LayoutComponent;
@@ -51,12 +33,8 @@ export class DynamicFormComponent implements OnInit {
   baseType : string;
   actualLayout: string = "smartdesign.base.VerticalLayout";
 
-  // get value() {
-  //   return this.form.value;
-  // }
   constructor(private fb: FormBuilder, private viewContainerRef: ViewContainerRef) {
     this.container = viewContainerRef;
-    console.log(this.container)
   }
 
   ngOnInit() {

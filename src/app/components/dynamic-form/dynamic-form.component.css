@@ -1,0 +1,18 @@
+.type {
+  padding: 5px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: darkgreen;
+}
+.name {
+  padding: 5px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: darkblue;
+}
+.nesting {
+  border: 1px solid black
+}
+.component {
+  padding: 10px
+}

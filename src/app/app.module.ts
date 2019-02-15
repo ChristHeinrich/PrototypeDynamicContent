@@ -87,7 +87,10 @@ import { EntryPointDirective } from './entry-point.directive'
     CheckboxComponent,
     VerticalLayoutComponent,
     SmartdesignBaseFieldGroupComponent,
-    SmartdesignBaseFieldComponent
+    SmartdesignBaseFieldComponent,
+    smartdesignBaseVerticalLayout,
+    smartdesignBaseHorizontalLayout
+
   ]
 })
 export class AppModule {}

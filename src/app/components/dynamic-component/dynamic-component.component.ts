@@ -9,21 +9,23 @@ import {
   ViewChild
 } from "@angular/core";
 import { InputComponent } from "../componentLib/input/input.component";
-import { VerticalLayoutComponent } from "../componentLib/vertical-layout/vertical-layout.component";
-import {HorizontalLayoutComponent} from '../componentLib/horizontal-layout/horizontal-layout.component';
+// import { VerticalLayoutComponent } from "../componentLib/vertical-layout/vertical-layout.component";
+// import {HorizontalLayoutComponent} from '../componentLib/horizontal-layout/horizontal-layout.component';
 import {SmartdesignBaseFieldComponent} from '../componentLib/smartdesign-base-field/smartdesign-base-field.component'
 import {SmartdesignBaseFieldGroupComponent} from '../componentLib/smartdesign-base-field-group/smartdesign-base-field-group.component'
 import {FieldConfig} from '../../types/field.interface';
 import {FormGroup} from '@angular/forms';
 import {ComponentTypeService} from '../../services/componentType.service';
+import {smartdesignBaseVerticalLayout} from '../componentLib/smartdesign-base-verticalLayout/smartdesign-base-verticalLayout.component'
+import {smartdesignBaseHorizontalLayout} from '../componentLib/smartdesign-base-horizontalLayout/smartdesign-base-horizontalLayout.component'
 
 const componentMapper = {
   "smartdesign.base.Field":SmartdesignBaseFieldComponent,
   "smartdesign.base.FieldGroup":SmartdesignBaseFieldGroupComponent ,
-  "smartdesign.base.VerticalLayout": VerticalLayoutComponent,
-  "smartdesign.base.HorizontalLayout": HorizontalLayoutComponent,
+  "smartdesign.base.VerticalLayout": smartdesignBaseVerticalLayout,
+  "smartdesign.base.HorizontalLayout": smartdesignBaseHorizontalLayout,
   "smartdesign.base.Message": SmartdesignBaseFieldComponent,
-  "smartdesign.base.ZLayout": VerticalLayoutComponent,
+  "smartdesign.base.ZLayout": smartdesignBaseVerticalLayout,
   "smartdesign.base.LinkField":SmartdesignBaseFieldComponent ,
   //TODO: continue
 };

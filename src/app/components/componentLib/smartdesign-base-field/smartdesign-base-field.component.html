@@ -9,14 +9,14 @@
 <ng-template #InputField>
   <form class="smartdesign-base-field-input">
     <mat-form-field class="smartdesign-base-field-input-full-width">
-      <input matInput placeholder="smartdesign.base.field" value="">
+      <input matInput placeholder={{actualTypeInfo}} value="">
     </mat-form-field>
   </form>
 </ng-template>
 
 <ng-template #Datepicker>
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <input matInput [matDatepicker]="picker" placeholder={{actualTypeInfo}}>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
