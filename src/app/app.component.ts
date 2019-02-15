@@ -27,7 +27,8 @@ export class AppComponent {
         this.dslDescription = dslDescription;
         this.formConfig = this.getFormInformation("dtb.annualstamp.Record");
         console.log(this.formConfig);
-        this.componentService.setMetaData(this.dslDescription[0].apps[9].types); //TODO hardcoded metadata replaced by a dynamic search
+        this.dslDescription[0].apps.forEach(app => this.componentService.setMetaData(app.types))
+        //this.componentService.setMetaData(this.dslDescription[0].apps[9].types); //TODO hardcoded metadata replaced by a dynamic search
       });
   }
 

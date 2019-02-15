@@ -8,27 +8,31 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
   styleUrls: ['./smartdesign-base-field.component.css']
 })
 export class SmartdesignBaseFieldComponent implements OnInit {
+  inputType : string;
+  actualTypeInfo: any;
 
-inputType : string;
 
   constructor(public componentService : ComponentTypeService) {
-    this.inputType = this.findCorrespondingType(componentService.types);
+    this.inputType  = this.findCorrespondingType(componentService.types);
     this.componentService.clearTypes();
   }
 
   private findCorrespondingType(actualTypes : any){
-    if(actualTypes.length===1 && actualTypes[0].ref){
-      for(let index = 0;index<this.componentService.metaData.length;index++){
-          for(let innerIndex = 0; innerIndex<this.componentService.metaData[index].fields.length; innerIndex++){
-            if(this.componentService.metaData[index].fields[innerIndex].name === actualTypes[0].ref){
-              return this.componentService.metaData[index].fields[innerIndex].type;
-            }
+    let actualType = actualTypes[actualTypes.length-1];
+    this.setActualType(actualType);
+    for(let index = 0; index < this.componentService.metaData.length; index++){
+        for(let innerIndex = 0; innerIndex < this.componentService.metaData[index].fields.length; innerIndex++){
+          if(this.componentService.metaData[index].fields[innerIndex].name === actualType.ref){
+            this.setActualType(this.componentService.metaData[index].fields[innerIndex]);
+            return this.componentService.metaData[index].fields[innerIndex].type;
           }
         }
-    }
-    else{
+      }
       return "DUMMY"
-    }
+  }
+
+  private setActualType(actualType: any) {
+    this.actualTypeInfo = actualType.type + ": " + actualType.name;
   }
 
   ngOnInit() {

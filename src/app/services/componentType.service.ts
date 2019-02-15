@@ -15,8 +15,8 @@ export class ComponentTypeService {
     this.types = [];
   }
 
-  setMetaData(newMetaData: any) {
-    this.metaData = newMetaData;
+  setMetaData(types: any) {
+    this.metaData = this.metaData.concat(types);
   }
 
   clearMetaData() {
