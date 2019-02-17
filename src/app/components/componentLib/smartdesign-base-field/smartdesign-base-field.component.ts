@@ -18,21 +18,22 @@ export class SmartdesignBaseFieldComponent implements OnInit {
   }
 
   private findCorrespondingType(actualTypes : any){
-    let actualType = actualTypes[actualTypes.length-1];
-    this.setActualType(actualType);
-    for(let index = 0; index < this.componentService.metaData.length; index++){
-        for(let innerIndex = 0; innerIndex < this.componentService.metaData[index].fields.length; innerIndex++){
-          if(this.componentService.metaData[index].fields[innerIndex].name === actualType.ref){
-            this.setActualType(this.componentService.metaData[index].fields[innerIndex]);
-            return this.componentService.metaData[index].fields[innerIndex].type;
-          }
-        }
-      }
-      return "DUMMY"
+    return "STRING";
+    // let actualType = actualTypes[actualTypes.length-1];
+    // this.setActualType(actualType);
+    // for(let index = 0; index < this.componentService.metaData.length; index++){
+    //     for(let innerIndex = 0; innerIndex < this.componentService.metaData[index].fields.length; innerIndex++){
+    //       if(this.componentService.metaData[index].fields[innerIndex].name === actualType.ref){
+    //         this.setActualType(this.componentService.metaData[index].fields[innerIndex]);
+    //         return this.componentService.metaData[index].fields[innerIndex].type;
+    //       }
+    //     }
+    //   }
+    //   return "DUMMY"
   }
 
   private setActualType(actualType: any) {
-    this.actualTypeInfo = actualType.type.toLowerCase() + ": " + actualType.name;
+    // this.actualTypeInfo = actualType.type.toLowerCase() + ": " + actualType.name;
   }
 
   ngOnInit() {

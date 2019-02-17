@@ -1,27 +1,15 @@
-<div class="form">
-  <mat-toolbar>
+<div class="mainapp">
+  <div class="form">
+    <mat-toolbar>
       <mat-toolbar-row>
-      Prototype DSL interpretation in Angular
+        Prototype DSL interpretation in Angular
       </mat-toolbar-row>
-  </mat-toolbar>
-</div>
-<!--<div>-->
-  <!--<smartdesign-base-Field-input_old></smartdesign-base-Field-input_old>-->
-<!--</div>-->
-  <!--<app-vertical-layout [fields]="formConfig">
-    <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
-  </app-vertical-layout>
-  <app-horizontal-layout [fields]="formConfig">
-    <dynamic-form [fields]="formConfig" (submit)="submit($event)">  </dynamic-form>
-  </app-horizontal-layout>-->
+    </mat-toolbar>
+  </div>
 
-  <!--<div *ngFor="let child of formConfig.children">-->
-    <!--child: {{child.name}}-->
-    <!--<dynamic-form [children]="child">  </dynamic-form>-->
-    <!--&lt;!&ndash;<dynamic-form [children]="child" [fields]="formConfig" [type]="formConfig.type" (submit)="submit($event)">  </dynamic-form>&ndash;&gt;-->
-  <!--</div>-->
-
-<div style="margin: 10px">
-  <dynamic-form [formConfig]="formConfig"></dynamic-form>
+  <div style="margin: 10px">
+    <dynamic-form [formConfig]="formConfig"></dynamic-form>
+  </div>
+  <app-messages></app-messages>
 </div>
-<app-messages></app-messages>
+

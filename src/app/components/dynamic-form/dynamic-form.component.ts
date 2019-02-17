@@ -40,6 +40,12 @@ export class DynamicFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  public getLayoutClass(componentType: string) {
+    console.log(componentType)
+    return componentType === "smartdesign.base.VerticalLayout"
+      ? "verticalLayout"
+      : "horizontalLayout"
+  }
 
   createControl() {
     const group = this.fb.group({});
