@@ -1,5 +1,5 @@
-<div class="smartdesign-base-verticalLayout ">
-  verticalLayout:
-  <div>Element 1</div>
-  <div>Element 2</div>
+<div class="smartdesign-base-verticalLayout">
+  <div *ngFor="let component of embeddedComponents" class="nesting">
+    <dynamic-form [formConfig]="component"></dynamic-form>
+  </div>
 </div>

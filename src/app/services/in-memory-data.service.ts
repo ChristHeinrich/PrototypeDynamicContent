@@ -18,10 +18,4 @@ export class InMemoryDataService implements InMemoryDbService{
     const dsl = DSL;
     return {dsl};
   }
-
-
-  // genId(dslDescription): number {
-  //   return dslDescription.length > 0 ? Math.max(...dslDescription.map(dslDescription => dslDescription.id)) + 1 : 11;
-  // }
-
 }

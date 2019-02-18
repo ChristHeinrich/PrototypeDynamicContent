@@ -3,6 +3,7 @@
   flex-direction: column;
   font-family: Roboto;
   font-size: 10px;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(242,242,242);
   border: 1px dotted grey!important;
+  padding: 5px;
 }

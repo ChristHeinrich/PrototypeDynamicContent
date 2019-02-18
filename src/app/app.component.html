@@ -1,12 +1,14 @@
 <div class="mainapp">
   <div class="form">
-    <mat-toolbar>
+    <mat-toolbar class="title">
       <mat-toolbar-row>
         Prototype DSL interpretation in Angular
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-
+  <mat-toolbar>
+    <span>My Application</span>
+  </mat-toolbar>
   <div style="margin: 10px">
     <dynamic-form [formConfig]="formConfig"></dynamic-form>
   </div>

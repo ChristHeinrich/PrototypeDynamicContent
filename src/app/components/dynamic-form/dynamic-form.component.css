@@ -8,27 +8,11 @@
   padding: 5px;
   font-family: Roboto;
   font-size: 12px;
-  color: darkblue;
+  color: black;
 }
 .nesting {
   border: 1px solid black
 }
 .component {
   padding: 10px
-}
-
-.horizontalLayout {
-  display: flex;
-  font-family: Roboto;
-  font-size: 10px;
-  background-color: lightgoldenrodyellow;
-
-}
-.verticalLayout {
-  display: flex;
-  flex-direction: column;
-  font-family: Roboto;
-  font-size: 10px;
-  background-color: thistle;
-  border: 1px dotted grey!important;
 }

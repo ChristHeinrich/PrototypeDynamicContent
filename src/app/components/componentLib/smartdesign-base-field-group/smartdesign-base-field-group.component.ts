@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-smartdesign-base-field-group',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./smartdesign-base-field-group.component.css']
 })
 export class SmartdesignBaseFieldGroupComponent implements OnInit {
-
+  @Input()embeddedComponents: any;
   constructor() { }
 
   ngOnInit() {

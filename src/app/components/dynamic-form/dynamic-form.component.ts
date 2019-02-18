@@ -77,4 +77,8 @@ export class DynamicFormComponent implements OnInit {
       control.markAsTouched({ onlySelf: true });
     });
   }
+
+  getDirective() {
+    return "smartdesign-base-verticalLayout"
+  }
 }

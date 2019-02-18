@@ -1,0 +1,20 @@
+.smartdesign-base-zlayout {
+  display: flex;
+  font-family: Roboto;
+  font-size: 10px;
+  background-color: rgb(242,242,242);
+  border: 1px dashed black;
+  padding: 5px;
+}
+@media screen and (max-width: 800px) {
+  .smartdesign-base-zlayout {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto;
+    font-size: 10px;
+    background-color: rgb(242,242,242);
+    border: 1px dashed black;
+    padding: 5px;
+  }
+}
+

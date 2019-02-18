@@ -1,5 +1,5 @@
 <div class="smartdesign-base-horizontalLayout ">
-  horizontalLayout:
-  <div>Element 1</div>
-  <div>Element 2</div>
+  <div *ngFor="let component of embeddedComponents" class="nesting">
+    <dynamic-form [formConfig]="component"></dynamic-form>
+  </div>
 </div>

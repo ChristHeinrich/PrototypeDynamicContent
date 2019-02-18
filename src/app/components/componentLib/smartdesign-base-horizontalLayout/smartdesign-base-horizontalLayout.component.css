@@ -2,6 +2,8 @@
   display: flex;
   font-family: Roboto;
   font-size: 10px;
-  background-color: lightgoldenrodyellow;
+  background-color:rgb(242,242,242);
+  border: 1px dashed black;
+  padding: 5px
 }
 
