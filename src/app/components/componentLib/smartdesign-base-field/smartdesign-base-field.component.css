@@ -2,7 +2,8 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  color: #F8F8F8;
+  font-size: 12px;
+  /*color: #F8F8F8;*/
 }
 
 .smartdesign-base-field-input-full-width {
@@ -13,9 +14,9 @@
   width: 350px;
   height: 25px;
   pointer-events:none;
-  background-color: lightcyan;
-  font-family: Roboto;
+  /*background-color: ;*/
+  font-family: "Segoe UI Light";;
   font-size: 10px;
-  border: 1px dashed grey;
+  border: 1px dotted grey!important;
   color: #F8F8F8;
 }

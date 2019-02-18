@@ -7,6 +7,7 @@
   <div *ngSwitchCase="'smartdesign.base.FieldGroup'" [ngTemplateOutlet]="FieldGroup"></div>
   <div *ngSwitchCase="'smartdesign.base.EmbeddedList'" [ngTemplateOutlet]="EmbeddedList"></div>
   <div *ngSwitchCase="'smartdesign.base.Field'" [ngTemplateOutlet]="InputField"></div>
+  <div *ngSwitchCase="'smartdesign.base.LinkField'" [ngTemplateOutlet]="LinkField"></div>
 </div>
 
 
@@ -22,22 +23,23 @@
   <app-smartdesign-base-zlayout [embeddedComponents]="formConfig.children"></app-smartdesign-base-zlayout>
 </ng-template>
 
+<ng-template #FieldGroup>
+  <app-smartdesign-base-field-group  [embeddedComponents]="formConfig"></app-smartdesign-base-field-group>
+</ng-template>
+
+<ng-template #EmbeddedList>
+  <app-smartdesign-base-embedded-list [formConfig]="formConfig"></app-smartdesign-base-embedded-list>
+</ng-template>
+
 <ng-template #Message>
   <app-smartdesign-base-message [formConfig]="formConfig"></app-smartdesign-base-message>
 </ng-template>
 
-<ng-template #FieldGroup>
-  <app-smartdesign-base-field-group  [embeddedComponents]="formConfig.children"></app-smartdesign-base-field-group>
-</ng-template>
-
-<ng-template #EmbeddedList>
-  <div>EmbeddedList</div>
-</ng-template>
-
 <ng-template #InputField>
-  <form class="smartdesign-base-field-input">
-    <mat-form-field class="smartdesign-base-field-input-dummy">
-      <input matInput placeholder="'dummy-component for {{actualTypeInfo}}" value="" >
-    </mat-form-field>
-  </form>
+  <smartdesign-base-field [formConfig]="formConfig"></smartdesign-base-field>
 </ng-template>
+
+<ng-template #LinkField>
+  <smartdesign-base-field [formConfig]="formConfig"></smartdesign-base-field>
+</ng-template>
+

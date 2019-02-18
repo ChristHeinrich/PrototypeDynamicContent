@@ -1,7 +1,8 @@
-
 <div [ngSwitch]="inputType">
   <div *ngSwitchCase="'STRING'" [ngTemplateOutlet]="InputField"></div>
   <div *ngSwitchCase="'DATETIME'" [ngTemplateOutlet]="Datepicker"></div>
+  <div *ngSwitchCase="'CURRENCY'" [ngTemplateOutlet]="Currency"></div>
+  <div *ngSwitchCase="'TEXT'" [ngTemplateOutlet]="Text"></div>
   <div *ngSwitchDefault [ngTemplateOutlet]="DUMMY"></div>
 </div>
 
@@ -9,23 +10,41 @@
 <ng-template #InputField>
   <form class="smartdesign-base-field-input">
     <mat-form-field class="smartdesign-base-field-input-full-width">
-      <input matInput placeholder={{actualTypeInfo}} value="">
+      <input matInput placeholder="{{formConfig.ref}} [{{inputType}}}]" value="">
     </mat-form-field>
   </form>
 </ng-template>
 
 <ng-template #Datepicker>
-  <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder={{actualTypeInfo}}>
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+  <form>
+    <mat-form-field  class="smartdesign-base-field-input">
+      <input matInput [matDatepicker]="picker" placeholder="{{formConfig.ref}} [{{inputType}}]">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</ng-template>
+
+<ng-template #Currency>
+  <form class="smartdesign-base-field-input">
+    <mat-form-field class="smartdesign-base-field-input-full-width">
+      <input matInput placeholder="{{formConfig.ref}} [{{inputType}}]" value="">
+    </mat-form-field>
+  </form>
+</ng-template>
+
+<ng-template #Text>
+  <form class="smartdesign-base-field-input">
+    <mat-form-field class="smartdesign-base-field-input-full-width">
+      <input matInput placeholder="{{formConfig.ref}} [{{inputType}}]" value="" disabled="true">
+    </mat-form-field>
+  </form>
 </ng-template>
 
 <ng-template #DUMMY>
   <form class="smartdesign-base-field-input">
     <mat-form-field class="smartdesign-base-field-input-dummy">
-      <input matInput placeholder="'dummy-component for {{actualTypeInfo}}" value="">
+      <input matInput placeholder="DUMMY for: {{formConfig.ref}} [{{inputType}}]" value="">
     </mat-form-field>
   </form>
 </ng-template>

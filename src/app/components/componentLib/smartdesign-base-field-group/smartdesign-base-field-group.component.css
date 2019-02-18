@@ -1,11 +1,20 @@
 .smartdesign-base-field-group {
-  font-family: Roboto;font-size: 10px;
-  border: 1px dashed black;
+  font-family: "Segoe UI Light";;font-size: 10px;
+  border: 1px dotted grey!important;
   background-color: #FFFFFF;
   padding: 5px;
   margin: 5px;
-  height: 85%;
-  /*width: 440px;*/
+  height: 90%;
   min-width: 355px
+}
+
+.smartdesign-base-field-group-title {
+  font-family: "Segoe UI Light";
+  text-align: left;
+  color: rgb(85,85,85);
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-left: 0px!important;
+  padding: 0px!important;
 
 }

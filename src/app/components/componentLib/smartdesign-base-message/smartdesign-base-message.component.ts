@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {WidgetComponent} from '../../../types/WidgetComponent';
 
 @Component({
@@ -6,13 +6,7 @@ import {WidgetComponent} from '../../../types/WidgetComponent';
   templateUrl: './smartdesign-base-message.component.html',
   styleUrls: ['./smartdesign-base-message.component.css']
 })
-export class SmartdesignBaseMessageComponent implements OnInit {
+export class SmartdesignBaseMessageComponent   {
   @Input() formConfig: WidgetComponent;
-  constructor() {
-
-  }
-  ngOnInit() {
-    console.log(this.formConfig)
-  }
-
+  constructor() {}
 }

@@ -28,7 +28,7 @@ import { EntryPointDirective } from './entry-point.directive';
 import { SmartdesignBaseMessageComponent } from './components/componentLib/smartdesign-base-message/smartdesign-base-message.component';
 import { SmartdesignBaseEmbeddedListComponent } from './components/componentLib/smartdesign-base-embedded-list/smartdesign-base-embedded-list.component';
 import { SmartdesignBaseZLayoutComponent } from './components/componentLib/smartdesign-base-zlayout/smartdesign-base-zlayout.component';
-import { SmartdesignBaseLinkfieldComponent } from './components/componentLib/smartdesign-base-linkfield/smartdesign-base-linkfield.component'
+import { SmartdesignBaseLinkfieldComponent } from './components/componentLib/smartdesign-base-linkfield/smartdesign-base-linkfield.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,8 @@ import { SmartdesignBaseLinkfieldComponent } from './components/componentLib/sma
     SmartdesignBaseFieldGroupComponent,
     SmartdesignBaseFieldComponent,
     smartdesignBaseVerticalLayout,
-    smartdesignBaseHorizontalLayout
+    smartdesignBaseHorizontalLayout,
+    SmartdesignBaseEmbeddedListComponent
 
   ]
 })

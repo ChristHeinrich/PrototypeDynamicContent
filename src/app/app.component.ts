@@ -16,7 +16,7 @@ import {ComponentTypeService} from './services/componentType.service';
 export class AppComponent {
   dslDescription: DslDescription[];
   data: any; //TODO: implement data-binding
-  formConfig: LayoutComponent;
+  formConfig: any; //TODO: should be app
 
   constructor(private layoutService: LayoutService, private dataService: DataService, private componentService : ComponentTypeService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
@@ -27,14 +27,17 @@ export class AppComponent {
         this.dslDescription = dslDescription;
         this.formConfig = this.getFormInformation("dtb.annualstamp.Record");
         console.log(this.formConfig);
-        this.dslDescription[0].apps.forEach(app => this.componentService.setMetaData(app.types))
+        this.dslDescription[0].apps.forEach(app => {
+          app.types.forEach(types => this.componentService.setMetaData(types.fields));
+        })
         //this.componentService.setMetaData(this.dslDescription[0].apps[9].types); //TODO hardcoded metadata replaced by a dynamic search
       });
   }
 
   getFormInformation(id: string): LayoutComponent {
     //TODO: refactor
-    return this.dslDescription[0].apps[0].forms[1].states[0].content;
+    // return this.dslDescription[0].apps[0].forms[1].states[0].content;
+    return this.dslDescription[0].apps[0]
   }
 
   getData(): void{

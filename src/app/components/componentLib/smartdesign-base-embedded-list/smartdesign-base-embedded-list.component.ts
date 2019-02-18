@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WidgetComponent} from '../../../types/WidgetComponent';
 
 @Component({
   selector: 'app-smartdesign-base-embedded-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./smartdesign-base-embedded-list.component.css']
 })
 export class SmartdesignBaseEmbeddedListComponent implements OnInit {
-
+  @Input() formConfig: WidgetComponent;
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

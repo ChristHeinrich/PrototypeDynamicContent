@@ -1,5 +1,8 @@
 <div class="smartdesign-base-field-group">
-  <div *ngFor="let component of embeddedComponents" class="nesting">
+  <mat-toolbar class="smartdesign-base-field-group-title">
+    <span class="smartdesign-base-field-group-title">{{embeddedComponents.caption || embeddedComponents.name}}</span>
+  </mat-toolbar>
+  <div *ngFor="let component of embeddedComponents.children" class="nesting">
     <dynamic-form [formConfig]="component"></dynamic-form>
   </div>
 </div>

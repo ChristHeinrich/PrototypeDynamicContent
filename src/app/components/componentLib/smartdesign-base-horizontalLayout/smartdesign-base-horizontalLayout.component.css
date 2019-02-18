@@ -1,9 +1,9 @@
 .smartdesign-base-horizontalLayout {
   display: flex;
-  font-family: Roboto;
+  font-family: "Segoe UI Light";;
   font-size: 10px;
   background-color:rgb(242,242,242);
-  border: 1px dashed black;
+  border: 1px dotted grey!important;
   padding: 5px
 }
 

@@ -7,10 +7,10 @@
     </mat-toolbar>
   </div>
   <mat-toolbar>
-    <span>My Application</span>
+    <span class="apptitle">{{formConfig.name}}</span>
   </mat-toolbar>
   <div style="margin: 10px">
-    <dynamic-form [formConfig]="formConfig"></dynamic-form>
+    <dynamic-form [formConfig]="formConfig.forms[1].states[0].content"></dynamic-form>
   </div>
   <app-messages></app-messages>
 </div>
