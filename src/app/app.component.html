@@ -5,27 +5,38 @@
         <span>Prototype DSL interpretation in Angular</span>
         <span class="spacer"></span>
 
-        <span>
+        <span class="padding">
           <mat-form-field>
             <mat-select [(ngModel)]="formConfig" name="formConfig" class="options">
               <mat-option *ngFor="let app of this.dslDescription[0].apps" [value]="app">
-                {{app.name}}
+                {{app.name || app.id}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </span>
-        <span class="spacer"></span>
 
-        <span>
+        <span class="padding">
           <mat-form-field>
-            <mat-select [(ngModel)]="mode" name="mode" class="options">
-              <mat-option *ngFor="let mode of modes" [value]="mode.value">
-                {{mode.viewValue}}
+            <mat-select [(ngModel)]="state" name="state" class="options">
+              <mat-option *ngFor="let state of formConfig.forms[1].states" [value]="state.mode">
+                {{state.mode}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-          {{mode}}
+          {{state}}
         </span>
+
+        <!--<span class="padding">-->
+          <!--<mat-form-field>-->
+            <!--<mat-select [(ngModel)]="mode" name="mode" class="options">-->
+              <!--<mat-option *ngFor="let mode of modes" [value]="mode.value">-->
+                <!--{{mode.viewValue}}-->
+              <!--</mat-option>-->
+            <!--</mat-select>-->
+          <!--</mat-form-field>-->
+          <!--{{mode}}-->
+        <!--</span>-->
+
 
       </mat-toolbar-row>
     </mat-toolbar>
@@ -34,7 +45,7 @@
     <span class="apptitle">{{formConfig.name}}</span>
   </mat-toolbar>
   <div style="margin: 10px">
-    <dynamic-form [formConfig]="formConfig.forms[1].states[0].content"></dynamic-form>
+    <dynamic-form [formConfig]="formConfig.forms[1].states[((state == 'edit') ? 1 : 0)].content"></dynamic-form>
   </div>
   <app-messages></app-messages>
 </div>

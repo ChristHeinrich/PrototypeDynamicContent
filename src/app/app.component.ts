@@ -16,11 +16,12 @@ import {ComponentTypeService} from './services/componentType.service';
 export class AppComponent {
   dslDescription: DslDescription[];
   data: any; //TODO: implement data-binding
-  mode: string;
+  mode: number;
+  state: string;
   formConfig: any; //TODO: should be app
   modes: any[] = [
-    {value: '0', viewValue: 'Read'},
-    {value: '1', viewValue: 'Write'}
+    {value: 0, viewValue: 'Read'},
+    {value: 1, viewValue: 'Write'}
   ];
 
   apps: any[] = [
@@ -58,8 +59,7 @@ export class AppComponent {
   ngOnInit() {
     this.getDsl();
     this.getData();
-    this.mode = "0";
-    // this.apps = this.dslDescription[0].apps;
+    this.mode = 0;
   }
 
 
