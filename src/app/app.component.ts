@@ -16,24 +16,13 @@ import {ComponentTypeService} from './services/componentType.service';
 export class AppComponent {
   dslDescription: DslDescription[];
   data: any; //TODO: implement data-binding
-  mode: number;
   state: string;
   formConfig: any; //TODO: should be app
-  modes: any[] = [
-    {value: 0, viewValue: 'Read'},
-    {value: 1, viewValue: 'Write'}
-  ];
-
-  apps: any[] = [
-    {id: "first"},
-    {id: "seccound"}
-
-  ]
-
   app: string;
-  // apps: any[];
+  formIdx: number = 0;
+  form: any;
+
   constructor(private layoutService: LayoutService, private dataService: DataService, private componentService : ComponentTypeService) { }
-  @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
   getDsl(): void {
     this.layoutService.getDsl()
@@ -59,10 +48,21 @@ export class AppComponent {
   ngOnInit() {
     this.getDsl();
     this.getData();
-    this.mode = 0;
+    this.state = "read";
+    this.form = "dtb.annualstamp.Record"
   }
 
-
-  submit(value: any) {}
+  public setFormConfig() {
+    this.state = "read";
+    for (let i = 0; i < this.dslDescription[0].apps.length; i++) {
+      let app = this.dslDescription[0].apps[i];
+      for (let j = 0; j < app.forms.length; j++) {
+        if (app.forms[j].id === this.form) {
+          this.formIdx = j;
+          this.formConfig = app;
+        }
+      }
+    }
+  }
 
 }

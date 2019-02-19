@@ -7,10 +7,12 @@
 
         <span class="padding">
           <mat-form-field>
-            <mat-select [(ngModel)]="formConfig" name="formConfig" class="options">
-              <mat-option *ngFor="let app of this.dslDescription[0].apps" [value]="app">
-                {{app.name || app.id}}
-              </mat-option>
+            <mat-select [(ngModel)]="form" name="" class="options" (selectionChange)="setFormConfig()">
+              <mat-optgroup *ngFor="let app of this.dslDescription[0].apps" [label]="app.name" [disabled]="false" >
+                <mat-option *ngFor="let form of app.forms" [value]="form.id">
+                {{form.id}}
+                </mat-option>
+             </mat-optgroup>
             </mat-select>
           </mat-form-field>
         </span>
@@ -18,25 +20,12 @@
         <span class="padding">
           <mat-form-field>
             <mat-select [(ngModel)]="state" name="state" class="options">
-              <mat-option *ngFor="let state of formConfig.forms[1].states" [value]="state.mode">
+              <mat-option *ngFor="let state of formConfig.forms[formIdx||0].states" [value]="state.mode">
                 {{state.mode}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-          {{state}}
         </span>
-
-        <!--<span class="padding">-->
-          <!--<mat-form-field>-->
-            <!--<mat-select [(ngModel)]="mode" name="mode" class="options">-->
-              <!--<mat-option *ngFor="let mode of modes" [value]="mode.value">-->
-                <!--{{mode.viewValue}}-->
-              <!--</mat-option>-->
-            <!--</mat-select>-->
-          <!--</mat-form-field>-->
-          <!--{{mode}}-->
-        <!--</span>-->
-
 
       </mat-toolbar-row>
     </mat-toolbar>
@@ -45,7 +34,7 @@
     <span class="apptitle">{{formConfig.name}}</span>
   </mat-toolbar>
   <div style="margin: 10px">
-    <dynamic-form [formConfig]="formConfig.forms[1].states[((state == 'edit') ? 1 : 0)].content"></dynamic-form>
+    <dynamic-form [formConfig]="formConfig.forms[formIdx||0].states[((state == 'edit') ? 1 : 0)].content"></dynamic-form>
   </div>
   <app-messages></app-messages>
 </div>
