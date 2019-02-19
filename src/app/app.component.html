@@ -2,7 +2,31 @@
   <div class="form">
     <mat-toolbar class="title">
       <mat-toolbar-row>
-        Prototype DSL interpretation in Angular
+        <span>Prototype DSL interpretation in Angular</span>
+        <span class="spacer"></span>
+
+        <span>
+          <mat-form-field>
+            <mat-select [(ngModel)]="formConfig" name="formConfig" class="options">
+              <mat-option *ngFor="let app of this.dslDescription[0].apps" [value]="app">
+                {{app.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+        <span class="spacer"></span>
+
+        <span>
+          <mat-form-field>
+            <mat-select [(ngModel)]="mode" name="mode" class="options">
+              <mat-option *ngFor="let mode of modes" [value]="mode.value">
+                {{mode.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          {{mode}}
+        </span>
+
       </mat-toolbar-row>
     </mat-toolbar>
   </div>

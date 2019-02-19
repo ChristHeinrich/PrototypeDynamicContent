@@ -11,13 +11,26 @@ import {ComponentTypeService} from './services/componentType.service';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
   dslDescription: DslDescription[];
   data: any; //TODO: implement data-binding
+  mode: string;
   formConfig: any; //TODO: should be app
+  modes: any[] = [
+    {value: '0', viewValue: 'Read'},
+    {value: '1', viewValue: 'Write'}
+  ];
 
+  apps: any[] = [
+    {id: "first"},
+    {id: "seccound"}
+
+  ]
+
+  app: string;
+  // apps: any[];
   constructor(private layoutService: LayoutService, private dataService: DataService, private componentService : ComponentTypeService) { }
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
@@ -25,19 +38,16 @@ export class AppComponent {
     this.layoutService.getDsl()
       .subscribe(async dslDescription => {
         this.dslDescription = dslDescription;
-        this.formConfig = this.getFormInformation("dtb.annualstamp.Record");
+        this.formConfig = this.getFormInformation(this.dslDescription[0].apps[0].id); //take the first app
         console.log(this.formConfig);
         this.dslDescription[0].apps.forEach(app => {
           app.types.forEach(types => this.componentService.setMetaData(types.fields));
         })
-        //this.componentService.setMetaData(this.dslDescription[0].apps[9].types); //TODO hardcoded metadata replaced by a dynamic search
       });
   }
 
   getFormInformation(id: string): LayoutComponent {
-    //TODO: refactor
-    // return this.dslDescription[0].apps[0].forms[1].states[0].content;
-    return this.dslDescription[0].apps[0]
+    return this.dslDescription[0].apps.find(app => app.id === id);
   }
 
   getData(): void{
@@ -48,6 +58,8 @@ export class AppComponent {
   ngOnInit() {
     this.getDsl();
     this.getData();
+    this.mode = "0";
+    // this.apps = this.dslDescription[0].apps;
   }
 
 

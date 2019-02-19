@@ -2,7 +2,6 @@
   width: 100%;
   background: rgb(242,242,242);
   font-family: "Segoe UI Light";
-
 }
 
 .title {
@@ -12,10 +11,15 @@
 }
 
 .apptitle {
-  font-family: "Segoe UI Light";
   text-align: center;
   border-bottom: 1px solid lightgrey;
   color: black;
   width: 100%;
+}
 
+.spacer {
+  flex: 1 1 auto;
+}
+.options {
+  font-size: 12px;
 }
