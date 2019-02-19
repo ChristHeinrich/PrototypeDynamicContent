@@ -53,16 +53,20 @@ export class AppComponent {
   }
 
   public setFormConfig() {
-    this.state = "read";
-    for (let i = 0; i < this.dslDescription[0].apps.length; i++) {
-      let app = this.dslDescription[0].apps[i];
-      for (let j = 0; j < app.forms.length; j++) {
-        if (app.forms[j].id === this.form) {
-          this.formIdx = j;
-          this.formConfig = app;
+    this.layoutService.fetchLayout()
+    .subscribe(async layout => {
+      this.layoutService.setCachedLayout(layout);
+      this.state = "read";
+      for (let i = 0; i < this.dslDescription[0].apps.length; i++) {
+        let app = this.dslDescription[0].apps[i];
+        for (let j = 0; j < app.forms.length; j++) {
+          if (app.forms[j].id === this.form) {
+            this.formIdx = j;
+            this.formConfig = app;
+          }
         }
       }
-    }
+    });
   }
 
 }
