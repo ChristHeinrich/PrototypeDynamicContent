@@ -8,5 +8,7 @@
   border: 1px dotted grey!important;
   padding: 5px;
 }
-div {flex-grow: 1;}
+div {
+  flex-grow: 1;
+}
 
