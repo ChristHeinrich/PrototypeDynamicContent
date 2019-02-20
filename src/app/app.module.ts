@@ -9,8 +9,9 @@ import { MatCardModule,
          MatToolbarModule,
          MatButtonModule,
          MatFormFieldModule,
-         MatInputModule } from '@angular/material';
-
+         MatInputModule,
+         MatBottomSheet,
+         MatBottomSheetRef} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
 import { MessagesComponent } from "./components/messages/messages.component";
@@ -21,10 +22,8 @@ import { AppLoadModule} from './modules/app-load-module.module';
 import { DynamicComponentComponent } from './components/dynamic-component/dynamic-component.component';
 import { SmartdesignBaseFieldGroupComponent } from './components/componentLib/smartdesign-base-field-group/smartdesign-base-field-group.component';
 import { SmartdesignBaseFieldComponent } from './components/componentLib/smartdesign-base-field/smartdesign-base-field.component';
-
 import {smartdesignBaseVerticalLayout} from './components/componentLib/smartdesign-base-verticalLayout/smartdesign-base-verticalLayout.component'
 import {smartdesignBaseHorizontalLayout} from './components/componentLib/smartdesign-base-horizontalLayout/smartdesign-base-horizontalLayout.component';
-import { EntryPointDirective } from './entry-point.directive';
 import { SmartdesignBaseMessageComponent } from './components/componentLib/smartdesign-base-message/smartdesign-base-message.component';
 import { SmartdesignBaseEmbeddedListComponent } from './components/componentLib/smartdesign-base-embedded-list/smartdesign-base-embedded-list.component';
 import { SmartdesignBaseZLayoutComponent } from './components/componentLib/smartdesign-base-zlayout/smartdesign-base-zlayout.component';
@@ -32,7 +31,6 @@ import { SmartdesignBaseLinkfieldComponent } from './components/componentLib/sma
 
 @NgModule({
   declarations: [
-    EntryPointDirective,
     AppComponent,
     DynamicFormComponent,
     MessagesComponent,
@@ -62,7 +60,9 @@ import { SmartdesignBaseLinkfieldComponent } from './components/componentLib/sma
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    // MatBottomSheet,
+    // MatBottomSheetRef
   ],
   providers: [],
   bootstrap: [AppComponent],
