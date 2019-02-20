@@ -7,7 +7,7 @@
 
         <span class="padding">
           <mat-form-field>
-            <mat-select [(ngModel)]="form" name="" class="options" (selectionChange)="setFormConfig()">
+            <mat-select [(ngModel)]="form" name="" class="options" (selectionChange)="setApp()">
               <mat-optgroup *ngFor="let app of this.dslDescription[0].apps" [label]="app.name" [disabled]="false" >
                 <mat-option *ngFor="let form of app.forms" [value]="form.id">
                 {{form.id}}
@@ -20,7 +20,7 @@
         <span class="padding">
           <mat-form-field>
             <mat-select [(ngModel)]="state" name="state" class="options">
-              <mat-option *ngFor="let state of formConfig.forms[formIdx||0].states" [value]="state.mode">
+              <mat-option *ngFor="let state of app.forms[formIdx||0].states" [value]="state.mode">
                 {{state.mode}}
               </mat-option>
             </mat-select>
@@ -31,10 +31,10 @@
     </mat-toolbar>
   </div>
   <mat-toolbar>
-    <span class="apptitle">{{formConfig.name}}</span>
+    <span class="apptitle">{{app.name}}</span>
   </mat-toolbar>
   <div style="margin: 10px">
-    <dynamic-form [formConfig]="formConfig.forms[formIdx||0].states[((state == 'edit') ? 1 : 0)].content"></dynamic-form>
+    <dynamic-form [formConfig]="app.forms[formIdx||0].states[((state == 'edit') ? 1 : 0)].content"></dynamic-form>
   </div>
   <app-messages></app-messages>
 </div>

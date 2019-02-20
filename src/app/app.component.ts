@@ -2,25 +2,25 @@ import { Component, ViewChild } from "@angular/core";
 //TODO: check validation stuff
 // import { Validators } from "@angular/forms";
 //import {Validators} from '@angular/forms';
-import {DslDescription, LayoutComponent} from './types/dsl.interface';
-import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
+import {DslDescription, App} from './types/dsl.interface';
 import { LayoutService} from "./services/layout.service";
 import { DataService} from "./services/data.service";
 import {ComponentTypeService} from './services/componentType.service';
+
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
+
 export class AppComponent {
   dslDescription: DslDescription[];
-  data: any; //TODO: implement data-binding
+  app: App;
   state: string;
-  formConfig: any; //TODO: should be app
-  app: string;
+  form: string;
   formIdx: number = 0;
-  form: any;
+  data: any; //TODO: implement data-binding
 
   constructor(private layoutService: LayoutService, private dataService: DataService, private componentService : ComponentTypeService) { }
 
@@ -28,15 +28,17 @@ export class AppComponent {
     this.layoutService.getDsl()
       .subscribe(async dslDescription => {
         this.dslDescription = dslDescription;
-        this.formConfig = this.getFormInformation(this.dslDescription[0].apps[0].id); //take the first app
-        console.log(this.formConfig);
+        //take the first app
+        this.app = this.getFormInformation(this.dslDescription[0].apps[0].id);
+        this.form = this.app.forms[0].id;
+        console.log(this.app);
         this.dslDescription[0].apps.forEach(app => {
           app.types.forEach(types => this.componentService.setMetaData(types.fields));
         })
       });
   }
 
-  getFormInformation(id: string): LayoutComponent {
+  getFormInformation(id: string): App {
     return this.dslDescription[0].apps.find(app => app.id === id);
   }
 
@@ -49,10 +51,10 @@ export class AppComponent {
     this.getDsl();
     this.getData();
     this.state = "read";
-    this.form = "dtb.annualstamp.Record"
+    // this.form = "dtb.annualstamp.Record"
   }
 
-  public setFormConfig() {
+  public setApp() {
     this.layoutService.fetchLayout()
     .subscribe(async layout => {
       this.layoutService.setCachedLayout(layout);
@@ -62,7 +64,7 @@ export class AppComponent {
         for (let j = 0; j < app.forms.length; j++) {
           if (app.forms[j].id === this.form) {
             this.formIdx = j;
-            this.formConfig = app;
+            this.app = app;
           }
         }
       }
