@@ -1,12 +1,13 @@
 .smartdesign-base-zlayout {
   display: flex;
+  flex-wrap: wrap;
   font-family: "Segoe UI Light";;
   font-size: 10px;
   background-color: rgb(242,242,242);
   border: 1px dotted grey!important;
   padding: 5px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 810px) {
   .smartdesign-base-zlayout {
     display: flex;
     flex-direction: column;

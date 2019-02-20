@@ -1,11 +1,13 @@
 .smartdesign-base-field-group {
-  font-family: "Segoe UI Light";;font-size: 10px;
+  font-family: "Segoe UI Light";
+  font-size: 10px;
   border: 1px dotted grey!important;
   background-color: #FFFFFF;
   padding: 5px;
   margin: 5px;
   height: 90%;
-  min-width: 355px
+  min-width: 400px;
+  width: inherit;
 }
 
 .smartdesign-base-field-group-title {
