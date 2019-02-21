@@ -1,0 +1,15 @@
+.dummy-toolbar {
+  min-width: 150px;
+  width: 100%;
+  pointer-events:none;
+  font: italic bold 12px "Segoe UI Light";
+  color: rgb(85,85,85);
+  background-color: white;
+  border: 1px dotted grey!important;
+  padding: 5px;
+  height: 100%;
+}
+
+.dummy {
+  height: 100%;
+}

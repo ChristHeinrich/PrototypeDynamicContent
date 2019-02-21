@@ -8,6 +8,7 @@
   <div *ngSwitchCase="'smartdesign.base.EmbeddedList'" [ngTemplateOutlet]="EmbeddedList"></div>
   <div *ngSwitchCase="'smartdesign.base.Field'" [ngTemplateOutlet]="InputField"></div>
   <div *ngSwitchCase="'smartdesign.base.LinkField'" [ngTemplateOutlet]="LinkField"></div>
+  <div *ngSwitchDefault [ngTemplateOutlet]="DUMMY"></div>
 </div>
 
 
@@ -43,3 +44,12 @@
   <smartdesign-base-field [formConfig]="formConfig"></smartdesign-base-field>
 </ng-template>
 
+<ng-template #DUMMY>
+  <div style="padding: 5px">
+    <div class="dummy">
+      <mat-toolbar class="dummy-toolbar">
+        <span >Not implemented: [{{formConfig.type}}] {{formConfig.name}}</span>
+      </mat-toolbar>
+    </div>
+  </div>
+</ng-template>
