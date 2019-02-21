@@ -1,5 +1,6 @@
 .smartdesign-base-zlayout {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 
   font-family: "Segoe UI Light";;
@@ -8,7 +9,19 @@
   border: 1px dotted grey!important;
   padding: 5px;
 }
-div {
-  flex-grow: 1;
+.smartdesign-base-zlayout>*{
+  /*flex-grow: 1;*/
+  flex: 1 1 auto;
+  align-items: stretch;
+  align-content: stretch;
 }
+/*.smartdesign-base-zlayout>*:last-child{*/
+  /*!*flex-grow: 1;*!*/
+  /*flex: 1 1 auto;*/
+  /*align-self: stretch;*/
+/*}*/
+/*div {*/
+  /*flex-grow: 1;*/
+  /*!*flex: 1 1 160px;*!*/
+/*}*/
 
