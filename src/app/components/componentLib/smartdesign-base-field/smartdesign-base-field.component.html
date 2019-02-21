@@ -1,5 +1,6 @@
 <div [ngSwitch]="inputType">
   <div *ngSwitchCase="'STRING'" [ngTemplateOutlet]="InputField"></div>
+  <div *ngSwitchCase="'LINK'" [ngTemplateOutlet]="Link"></div>
   <div *ngSwitchCase="'DATETIME'" [ngTemplateOutlet]="Datepicker"></div>
   <div *ngSwitchCase="'CURRENCY'" [ngTemplateOutlet]="Currency"></div>
   <div *ngSwitchCase="'TEXT'" [ngTemplateOutlet]="Text"></div>
@@ -40,6 +41,13 @@
     </mat-form-field>
   </form>
 </ng-template>
+
+<ng-template #Link>
+  <form class="smartdesign-base-field-input">
+    <app-smartdesign-base-linkfield [formConfig]="formConfig"></app-smartdesign-base-linkfield>
+  </form>
+</ng-template>
+
 
 <ng-template #DUMMY>
   <form class="smartdesign-base-field-input">

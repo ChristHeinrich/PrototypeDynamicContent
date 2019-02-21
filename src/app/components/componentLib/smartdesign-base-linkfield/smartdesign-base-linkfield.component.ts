@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-smartdesign-base-linkfield',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./smartdesign-base-linkfield.component.css']
 })
 export class SmartdesignBaseLinkfieldComponent implements OnInit {
-
+ @Input() formConfig;
   constructor() { }
 
   ngOnInit() {
