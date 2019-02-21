@@ -11,6 +11,7 @@
 }
 
 .apptitle {
+  font-family: "Segoe UI Light";
   text-align: center;
   border-bottom: 1px solid lightgrey;
   color: black;
@@ -25,4 +26,8 @@
 }
 .padding {
   padding : 5px;
+}
+
+.small {
+  width: 50px
 }

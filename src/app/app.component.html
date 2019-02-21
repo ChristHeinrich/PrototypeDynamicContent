@@ -4,7 +4,6 @@
       <mat-toolbar-row>
         <span>Prototype DSL interpretation in Angular</span>
         <span class="spacer"></span>
-
         <span class="padding">
           <mat-form-field>
             <mat-select [(ngModel)]="form" name="" class="options" (selectionChange)="setApp()">
@@ -16,9 +15,8 @@
             </mat-select>
           </mat-form-field>
         </span>
-
         <span class="padding">
-          <mat-form-field>
+          <mat-form-field class="small">
             <mat-select [(ngModel)]="state" name="state" class="options">
               <mat-option *ngFor="let state of app.forms[formIdx||0].states" [value]="state.mode">
                 {{state.mode}}
@@ -26,7 +24,6 @@
             </mat-select>
           </mat-form-field>
         </span>
-
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
